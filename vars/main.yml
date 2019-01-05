@@ -1,0 +1,7 @@
+---
+install_files:
+  - owner:              'root'
+    group:              'root'
+    mode:               '0644'
+    src:                'files/conf/resolv.conf'
+    dest:               '/etc/resolv.conf'
