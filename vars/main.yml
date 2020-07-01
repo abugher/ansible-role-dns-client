@@ -1,4 +1,6 @@
 ---
+remove_packages:
+  - 'resolvconf'
 install_files:
   - owner:              'root'
     group:              'root'
