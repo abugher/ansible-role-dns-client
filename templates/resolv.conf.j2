@@ -1,4 +1,4 @@
-{% for nameserver in groups['dns_internal'] %}
+{% for nameserver in groups['dns-internal'] %}
 nameserver {{ hostvars[nameserver]['ip_address'] }}
 {% endfor %}
 search {{ domain }}
