@@ -1,3 +1,3 @@
 ---
-- include:              "../../tasks/remove_packages.yml"
-- include:              "../../tasks/template_files.yml"
+- include_tasks:        "../../tasks/remove_packages.yml"
+- include_tasks:        "../../tasks/template_files.yml"
