@@ -3,8 +3,7 @@ remove_packages:
   - "resolvconf"
   - "openresolv"
 commands:
-  - command:                    ls /lib/systemd/systemd-resolved
-    failed_when:                False
+  - command:                    sh -c 'if test -e /lib/systemd/systemd-resolved; then echo yes; else echo no; fi'
     changed_when:               False
 disable_services:
   - 'systemd-resolved'
