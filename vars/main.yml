@@ -2,6 +2,14 @@
 remove_packages:
   - "resolvconf"
   - "openresolv"
+commands:
+  - command:                    ls /lib/systemd/systemd-resolved
+    failed_when:                False
+    changed_when:               False
+disable_services:
+  - 'systemd-resolved'
+stop_services:
+  - 'systemd-resolved'
 template_files:
   - owner:                      "root"
     group:                      "root"
