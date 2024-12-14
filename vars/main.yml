@@ -2,6 +2,7 @@
 remove_packages:
   - "resolvconf"
   - "openresolv"
+  - "systemd-resolved"
 commands:
   - command:                    sh -c 'if test -e /lib/systemd/systemd-resolved; then echo yes; else echo no; fi'
     changed_when:               False

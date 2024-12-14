@@ -1,4 +1,13 @@
 ---
 - include_tasks:        "../../tasks/remove_packages.yml"
-- include_tasks:        "stop_systemd_resolved.yml"
+- shell:                test -e /lib/systemd/systemd-resolved
+  failed_when:          False
+  changed_when:         False
+  register:             systemd_resolved_check
+- include_tasks:        '../tasks/disable_services.yml'
+  when:                 0 == systemd_resolved_check.rc
+- include_tasks:        '../tasks/mask_services.yml'
+  when:                 0 == systemd_resolved_check.rc
+- include_tasks:        '../tasks/stop_services.yml'
+  when:                 0 == systemd_resolved_check.rc
 - include_tasks:        "../../tasks/template_files.yml"
