@@ -1,5 +1,5 @@
 ---
-- include_tasks:        "../../tasks/remove_packages.yml"
+- include_tasks:        '../tasks/remove_packages.yml'
 - shell:                test -e /lib/systemd/systemd-resolved
   failed_when:          False
   changed_when:         False
@@ -10,4 +10,4 @@
   when:                 0 == systemd_resolved_check.rc
 - include_tasks:        '../tasks/stop_services.yml'
   when:                 0 == systemd_resolved_check.rc
-- include_tasks:        "../../tasks/template_files.yml"
+- include_tasks:        '../tasks/template_files.yml'
